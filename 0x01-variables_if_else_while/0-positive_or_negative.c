@@ -1,26 +1,24 @@
 #include <stdlib.h>
 #include <time.h>
-#include <stdio.h>
-
 /**
- * main - Prints a random number and states whether
- *        it is positive, negative, or zero.
+ * main - Prints a random number print the last digit of
+ * the number and Detect
+ * it is greater than 5 , less than 5, or zero.
  *
  * Return: Always 0.
 */
-int main(void)
+int main (void)
 {
-	int n;
-
+	int n , lastdigit;
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-
-	if (n > 0)
-		printf("%d is positive\n", n);
-	else if (n < 0)
-		printf("%d is negative\n", n);
-	else
-		printf("%d is zero\n", n);
-
+	lastdigit = n % 10;
+	
+	if (lastdigit < 6 && lastdigit != 0 )
+        printf("Last digit of %d is %d and is less than 6 and not 0",n,lastdigit);
+	else if (lastdigit > 5)
+        printf("Last digit of %d is %d and is greater than 5 ",n,lastdigit);
+	else 
+         printf("Last digit of %d is %d and is 0 ",n,lastdigit);
 	return (0);
 }
