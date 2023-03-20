@@ -1,25 +1,21 @@
 #include <stdio.h>
 
 /**
- *main - Write a program that prints the alphabet in
- *lowercase, followed by a new line.
+ * main - Prints all possible combinations of single-digit numbers.
  *
- *Return: Always 0.
+ * Return: Always 0.
  */
 int main(void)
 {
-	int nums;
-	int i;
+	int num;
 
-	for (nums = 48; nums <= 57; nums++)
+	for (num = 0; num <= 9; num++)
 	{
-		for (i = 1; i < 2; i++)
-		{
-			putchar(nums);
-		}
+		putchar((num % 10) + '0');
+		if (num == 9)
+			continue;
 
-		if (nums != 57)
-			putchar(',');
+		putchar(',');
 		putchar(' ');
 	}
 
