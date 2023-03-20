@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+/**
+ *main - Write a program that prints the alphabet in
+ *lowercase, followed by a new line.
+ *
+ *Return: Always 0.
+ */
+int main(void)
+{
+	int i;
+
+	for (i = 0; i <= 9; i++)
+		printf("%d", i);
+
+	putchar('\n');
+
+	return (0);
+}
