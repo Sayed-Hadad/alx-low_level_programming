@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- *print_line -pritn line in termail
-
+ *print_line - prit lines in teminal
  *
  *@n: the input
  */
