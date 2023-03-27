@@ -2,7 +2,7 @@
 
 /**
  *reset_to_98 - function to reset value to 98.
- *@*n : input.
+ *@n : input.
  *Retrun : void.
  */
 void reset_to_98(int *n)
