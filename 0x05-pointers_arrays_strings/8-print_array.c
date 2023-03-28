@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  *puts - prints every char in string
@@ -16,5 +17,5 @@ void print_array(int *a, int n)
 			printf(", %d", a[i]);
 	}
 
-	_putchar('\n');
+	printf("\n");
 }
