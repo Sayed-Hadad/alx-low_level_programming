@@ -2,13 +2,14 @@
 #include <stdio.h>
 
 /**
- *puts - prints every char in string
- *
- *@str: the input
+ *print_array - print array elements
+ *@n : number od array elements
+ *@a: the input
  */
 void print_array(int *a, int n)
 {
 	int i;
+
 	for (i = 0; i < n; i++)
 	{
 		if (i == 0)
