@@ -1,13 +1,9 @@
-#include "main.h"
-
-/**
- *_atoi - function return s
- *Return : (s)
- *@s : the input
- *
- */
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 int _atoi(char *s)
 
 {
-	return (s);
+    return atoi(s);
 }
