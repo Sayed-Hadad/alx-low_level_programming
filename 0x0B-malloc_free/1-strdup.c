@@ -6,18 +6,30 @@
 /**
  *_strdup - function to duplicate string
  *@str : the source string
- * Return:  length of string
+ *Return:  length of string
  */
-
 char *_strdup(char *str)
 {
-	char *copy = malloc(strlen(str) + 1);
+	char *copy;
+	int i, size;
 
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 
-	strcpy(copy, str);
+	size = strlen(str) + 1;
+	copy = malloc(strlen(str));
+	for (i = 0; i < size; i++)
+	{
+		if (copy == NULL)
+		{
+			return (NULL);
+		}
+
+		copy[i] = str[i];
+	}
+
 	return (copy);
+
 }
