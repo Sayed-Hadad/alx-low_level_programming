@@ -45,7 +45,7 @@ char *_strcpy(char *dest, char *src)
  *@owner: ...
  *Return: ...
  */
-*dog_t new_dog(char *name, float age, char *owner)
+dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t  *dogy;
 
@@ -54,7 +54,7 @@ char *_strcpy(char *dest, char *src)
 		return (NULL);
 	}
 
-	dogy = (*dog_t) malloc(sizeof(dog_t));
+	dogy = (dog_t *) malloc(sizeof(dog_t));
 	if (dogy == NULL)
 	{
 		return (NULL);
