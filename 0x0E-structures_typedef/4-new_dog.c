@@ -4,7 +4,6 @@
 /**
  *_strlen - Returns the length of a string
  *@s: String to count
- *
  *Return: String length
  */
 int _strlen(char *s)
@@ -23,7 +22,6 @@ int _strlen(char *s)
  *_strcpy - Copy a string
  *@dest: Destination value
  *@src: Source value
- *
  *Return: the pointer to dest
  */
 char *_strcpy(char *dest, char *src)
@@ -45,32 +43,31 @@ char *_strcpy(char *dest, char *src)
  *@name: ...
  *@age: ...
  *@owner: ...
- *
  *Return: ...
  */
-dog_t* new_dog(char *name, float age, char *owner)
+*dog_t new_dog(char *name, float age, char *owner)
 {
-	dog_t * dogy;
+	dog_t  *dogy;
 
 	if (!name || age < 0 || !owner)
 	{
 		return (NULL);
 	}
 
-	dogy = (dog_t*) malloc(sizeof(dog_t));
+	dogy = (*dog_t) malloc(sizeof(dog_t));
 	if (dogy == NULL)
 	{
 		return (NULL);
 	}
 
-	dogy->name = malloc(sizeof(char) *(_strlen(name) + 1));
+	dogy->name = malloc(sizeof(char) * (_strlen(name) + 1));
 	if (dogy->name == NULL)
 	{
 		free(dogy);
 		return (NULL);
 	}
 
-	dogy->owner = malloc(sizeof(char) *(_strlen(owner) + 1));
+	dogy->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
 	if (dogy->owner == NULL)
 	{
 		free(dogy->name);
