@@ -2,15 +2,17 @@
 #include "variadic_functions.h"
 
 /**
- *sum_them_all - function to sum infinity nums
- *@n : number of nums
- *return : sum
+ * sum_them_all - Entry Point
+ * @n: variadic inputs
+ * Return: sum
  */
 int sum_them_all(const unsigned int n, ...)
 {
-	int sum = 0, i;
+	int sum = 0;
+	unsigned int i;
 
 	va_list ptr;
+
 	va_start(ptr, n);
 	for (i = 0; i < n; i++)
 	{
@@ -18,4 +20,4 @@ int sum_them_all(const unsigned int n, ...)
 	}
 
 	return (sum);
-};
+}
