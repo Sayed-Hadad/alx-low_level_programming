@@ -1,43 +1,31 @@
 #include "main.h"
-/**
- * _strstr -  function that locates a substring.
- *@haystack : the source string
- *@needle : the search element
- * Return: the result of search
- */
 
+/**
+ * _strstr - similar to strstr function in std library
+ *
+ * @haystack: intial segment to search in
+ * @needle: the chars to search for.
+ * Return:   pointer to the byte in s that matches one of
+ *		the bytes in accept, or NULL
+ */
 char *_strstr(char *haystack, char *needle)
 {
-	int count = 0, a = 0, k, j = 0, l, i = 0;
-	char *p;
+	int i, j, k;
 
-	while (needle[count] != '\0')
+	for (i = 0; haystack[i]; i++)
 	{
-		count++;
-	}
-	while (haystack[i] != '\0')
-	{
-		i++;
-			}
-	if (count == 0)
-		return (haystack);
-	while (haystack[j] != '\0')
-	{
-		if (haystack[j] == needle[0])
+		k = i;
+		for (j = 0; needle[j]; j++)
 		{
-			p = &haystack[j];
-			l = j;
-			a = 0;
-			for (k = 0; k < count; k++)
+			if (haystack[k + j] != needle[j])
 			{
-				if (haystack[l] == needle[k])
-					a++;
-				l++;
+				break;
 			}
 		}
-		if (a == count)
-			return (p);
-		j++;
+		if (needle[j] == 0)
+		{
+			return (haystack + i);
+		}
 	}
-	return ('\0');
+	return (0);
 }

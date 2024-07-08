@@ -1,27 +1,32 @@
 #include "main.h"
 
 /**
- *_strspn - function that gets the length of a prefix substring.
- *@s: source str
- *@accept: search str
+ * _strspn - similar to strspn function in std library
  *
- *Return: the resault
+ * @s: intial segment to search in
+ * @accept: the chars to search for.
+ * Return: the number of bytes in the initial segment of s which consist only
+ *		of bytes from accept
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, j;
+	unsigned int i, current = 0;
+	char arr[256];
 
-	for (j = 0; *(s + j); j++)
+	for (i = 0; accept[i]; i++)
 	{
-		for (i = 0; *(accept + i); i++)
-		{
-			if (*(s + j) == *(accept + i))
-				break;
-		}
-
-		if (*(accept + i) == '\0')
-			break;
+		arr[(int) accept[i]] = 1;
 	}
-
-	return (j);
+	for (i = 0; s[i]; i++)
+	{
+		if (arr[(int) s[i]] == 1)
+		{
+			current++;
+		}
+		else
+		{
+			break;
+		}
+	}
+	return (current);
 }
